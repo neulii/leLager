@@ -14,8 +14,8 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
    
     wxMenu* menuFile = new wxMenu;
 
-    menuFile->Append(ID_SaveGame, "Speichern", "Speichert das bestehende Spiel");
-    menuFile->Append(ID_OpenGame, "Oeffnen", "oeffnet ein Spiel");
+    //menuFile->Append(ID_SaveGame, "Speichern", "Speichert das bestehende Spiel");
+    //menuFile->Append(ID_OpenGame, "Oeffnen", "oeffnet ein Spiel");
 
 
     menuFile->AppendSeparator();
@@ -47,21 +47,11 @@ void MainWindow::OnExit(wxCommandEvent& event)
 }
 void MainWindow::OnAbout(wxCommandEvent& event)
 {
-    //wxMessageBox("Dieses Programm dient zum Zaehlen von Punkten beim Roemoen ;)", "...nur zur Info...",  wxYES_NO | wxICON_QUESTION);
-    wxMessageDialog* dial = new wxMessageDialog(NULL,
-        wxT("Error loading file"), wxT("Error"), wxYES_NO );
-    dial->ShowModal();
+    wxMessageBox("Das ist eine Info box!", "...nur zur Info...",  wxYES_NO | wxICON_QUESTION);
+    //rxMessageDialog* dial = new wxMessageDialog(NULL,
+    //wxT("Error loading file"), wxT("Error"), wxYES_NO );
+    //dial->ShowModal();
 
-
-}
-
-void MainWindow::SaveGame(wxCommandEvent& event)
-{
-
-}
-
-void MainWindow::OpenGame(wxCommandEvent& event)
-{
 
 }
 
@@ -75,8 +65,6 @@ void MainWindow::OnClose(wxCloseEvent& event)
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
     EVT_MENU(ID_Exit, MainWindow::OnExit)
     EVT_MENU(ID_Info, MainWindow::OnAbout)
-    EVT_MENU(ID_SaveGame, MainWindow::SaveGame)
-    EVT_MENU(ID_OpenGame, MainWindow::OpenGame)
     EVT_CLOSE(MainWindow::OnClose)
 
 

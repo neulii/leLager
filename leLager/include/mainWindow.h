@@ -19,8 +19,6 @@ private:
 
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
-    void SaveGame(wxCommandEvent& event);
-    void OpenGame(wxCommandEvent& event);
     void OnClose(wxCloseEvent& event);
 
     wxDECLARE_EVENT_TABLE();
@@ -30,14 +28,8 @@ private:
 
 enum id
 {
-    ID_NewGame = 6,
-    ID_SaveGame = 2,
-    ID_OpenGame = 3,
-    ID_Exit = 4,
-    ID_Info = 5
-  /*  ID_NEWBUTTON = 2,
-    ID_TEXTINPUT = 3,*/
-    //ID_EXIT
+    ID_Exit = 1,
+    ID_Info = 2 
 };
 
 
