@@ -18,7 +18,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     //menuFile->Append(ID_OpenGame, "Oeffnen", "oeffnet ein Spiel");
 
 
-    menuFile->AppendSeparator();
+    //menuFile->AppendSeparator();
     menuFile->Append(ID_Exit,"Beenden", "Beendet das Programm");
 
     wxMenu* menuHelp = new wxMenu;
