@@ -41,6 +41,18 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     reportGrid= new wxGrid(this, wxID_ANY);
     reportGrid->CreateGrid(1, 3);
 
+    reportGrid->SetColLabelValue(0, "Datum");
+    reportGrid->SetColLabelValue(1, "Anlage");
+    reportGrid->SetColLabelValue(2, "Betreff");
+
+    reportGrid->SetColSize(0, 80);
+    reportGrid->SetColSize(1, 130);
+    reportGrid->SetColSize(2, 350);
+
+    //todo
+
+
+
     
     
     mainSizer->Add(reportGrid, 1, wxEXPAND | wxALL);
