@@ -3,6 +3,7 @@
 #include <iostream>
 #include "part.h"
 #include "include/date.h"
+#include "report.h"
 
 
 wxIMPLEMENT_APP(MyApp);
@@ -12,13 +13,23 @@ bool MyApp::OnInit()
     MainWindow* frame = new MainWindow("leLager Lagerwirtschaft", wxDefaultPosition, wxSize(800, 600));
     
     Part lager("lager");
-    neulib::Date* date = new neulib::Date(10, 10, 10);
-
-    const char* test = neulib::intToC_String(10);
-
-    wxLogDebug(neulib::intToC_String(10));
+    std::string title = "title";
+    std::string text = " das ist ein kleiner meldungsetxt";
+    neulib::Date *date = new neulib::Date(10, 10, 1000);
+    std::string plant = " ofen";
 
     
+    Report* r = new Report("title", date,"mein text", "ofen");
+
+    wxMessageBox(r->getPlant());
+
+
+
+
+    
+
+  
+   
 
    
 

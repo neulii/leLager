@@ -1,25 +1,25 @@
 #include "report.h"
-#include "include/date.h"
 
-class Report
+
+Report::Report(const char *reportTitle, neulib::Date *date, const char* reportText, const char* plant)
 {
+	this->startDate = date;
+	this->reportText = reportText;
+	this->reportTitle = reportTitle;
+	this->plant = plant;
+}
 
-private:
+const char* Report::getPlant()
+{
+	return plant;
+}
 
-	const char* reportTitle;
-	const char* reportText;
+const char* Report::getReportText()
+{
+	return reportText;
+}
 
-	const char* plant;
-	
-	neulib::Date startDate;
-
-public:
-
-	Report(const char* reportTitle,neulib::Date date, const char* reportText);
-
-
-
-
-
-
-};
+const char* Report::getTitle()
+{
+	return reportTitle;
+}

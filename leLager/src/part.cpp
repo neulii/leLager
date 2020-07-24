@@ -25,3 +25,4 @@ const char* Part::getOrderNumber()
 {
 	return orderNumber;
 }
+
