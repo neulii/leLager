@@ -13,9 +13,14 @@ bool MyApp::OnInit()
     Part lager("lager");
     lager.setManufacturer("superlager");
 
+   
+
+    wxMessageBox(lager.getManufacturer());
 
 
-    wxLogDebug(lager.getManufacturer()->c_str());
+
+
+    wxLogDebug(lager.getManufacturer());
 
    
     

@@ -7,21 +7,22 @@ class Part {
 
 	private:
 
-	
-		std::string manufacturer;
-		std::string description;
-		std::string orderNumber;
+		
 
-		std::string storage;
+		const char* manufacturer = "";
+		const char* description = "";
+		const char* orderNumber = "";
+	
+		const char* storage = "";
 	
 
 	public:
 
-		Part(std::string description);
+		Part(const char* description);
 	
-		const std::string* getManufacturer();
-		const std::string* getDescription();
-		const std::string* getOrderNumber();
+		const char* getManufacturer();
+		const char* getDescription();
+		const char* getOrderNumber();
 
 		void Part::setManufacturer(const char* manufacturer);
 };

@@ -1,6 +1,6 @@
 #include "part.h"
 
-Part::Part(std::string description)
+Part::Part(const char* description)
 {
 	this->description = description;
 }
@@ -8,22 +8,20 @@ Part::Part(std::string description)
 void Part::setManufacturer( const char* manufacturer)
 {
 	this->manufacturer = manufacturer;
-
-
-
+	
 }
 
-const std::string* Part::getManufacturer()
+const char* Part::getManufacturer()
 {
-	return &this->manufacturer;
+	return manufacturer;
 }
 
-const std::string* Part::getDescription()
+const char* Part::getDescription()
 {
-	return &this->description;
+	return description;
 }
 
-const std::string* Part::getOrderNumber()
+const char* Part::getOrderNumber()
 {
-	return &this->orderNumber;
+	return orderNumber;
 }
