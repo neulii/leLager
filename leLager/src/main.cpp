@@ -21,7 +21,7 @@ bool MyApp::OnInit()
     
     Report* r = new Report("title", date,"mein text", "ofen");
 
-    wxMessageBox(r->getPlant());
+    
 
 
 

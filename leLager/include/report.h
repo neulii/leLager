@@ -19,7 +19,7 @@ private:
 public:
 
 	Report(const char *reportTitle, neulib::Date *date,const char* reportText, const char *plant);
-	
+
 	const char* getPlant();
 	const char* getTitle();
 	const char* getReportText();

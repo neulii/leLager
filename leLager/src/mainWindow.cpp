@@ -1,10 +1,15 @@
 #include "mainWindow.h"
 #include "functions.h"
+#include "wx/grid.h"
+#include "wx/panel.h"
 
 
 MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
+
+    
+
     //wxPanel* panel = new wxPanel(this, wxID_ANY);
 
   /*  testButton = new wxButton(panel, ID_EXIT, wxT("Quit"), wxPoint(20, 20));
@@ -27,6 +32,44 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     wxMenuBar* menuBar = new wxMenuBar;
     menuBar->Append(menuFile, "&Datei");
     menuBar->Append(menuHelp, "&Info");
+
+   // mainPanel = new wxPanel(this, wxID_ANY);
+
+
+    mainSizer = new wxBoxSizer(wxVERTICAL);
+
+    reportGrid= new wxGrid(this, wxID_ANY);
+    reportGrid->CreateGrid(1, 3);
+
+    
+    
+    mainSizer->Add(reportGrid, 1, wxEXPAND | wxALL);
+    this->SetSizer(mainSizer);
+
+    this->Layout();
+
+   
+
+
+   
+
+    
+    
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
     SetMenuBar(menuBar);
 
     CreateStatusBar();

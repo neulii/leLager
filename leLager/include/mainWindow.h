@@ -7,21 +7,39 @@
 #endif
 
 
-
+#include "wx/grid.h"
 #include "include/main_lib.h"
 
 class MainWindow : public wxFrame
 {
+
+
+    
 public:
     MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
 
 private:
+    wxPanel* mainPanel;
+    wxBoxSizer* mainSizer;
+    wxGrid* reportGrid;
+   
+    
 
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
     void OnClose(wxCloseEvent& event);
 
+
+
+
     wxDECLARE_EVENT_TABLE();
+
+
+
+
+    
+
+
 };
 
 //id's for wxcomponents
