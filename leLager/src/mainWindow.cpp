@@ -4,12 +4,10 @@
 #include "wx/panel.h"
 
 
+
 MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
-
-    
-
     //wxPanel* panel = new wxPanel(this, wxID_ANY);
 
   /*  testButton = new wxButton(panel, ID_EXIT, wxT("Quit"), wxPoint(20, 20));
@@ -38,49 +36,24 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
 
     mainSizer = new wxBoxSizer(wxVERTICAL);
 
-    reportGrid= new wxGrid(this, wxID_ANY);
+    reportGrid= new wxGrid(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0);
     reportGrid->CreateGrid(1, 3);
+    reportGrid->EnableEditing(false);
+    reportGrid->EnableDragGridSize(false);
+    reportGrid->SetMargins(0, 0);
 
-    reportGrid->SetColLabelValue(0, "Datum");
-    reportGrid->SetColLabelValue(1, "Anlage");
-    reportGrid->SetColLabelValue(2, "Betreff");
+    reportGrid->EnableDragColMove(false);
+    reportGrid->EnableDragColSize(true);
 
-    reportGrid->SetColSize(0, 80);
-    reportGrid->SetColSize(1, 130);
-    reportGrid->SetColSize(2, 350);
+
+    layoutGrid();
 
     //todo
 
-
-
-    
-    
     mainSizer->Add(reportGrid, 1, wxEXPAND | wxALL);
     this->SetSizer(mainSizer);
 
     this->Layout();
-
-   
-
-
-   
-
-    
-    
-
-    
-
-    
-    
-
-
-
-
-
-
-
-
-
 
     SetMenuBar(menuBar);
 
@@ -116,6 +89,44 @@ void MainWindow::OnClose(wxCloseEvent& event)
     Destroy();
 
 }
+
+void MainWindow::loadDataToGrid(std::vector<Report*> *reports)
+{
+    
+    //reportGrid->CreateGrid(reports->size(), 3);
+   
+    reportGrid->SetTable(new wxGridStringTable(reports->size(), 3));
+
+
+    for (int i = 0; i < reports->size(); i++)
+    {
+        //TODO gehört noch geändert
+        std::string date = "";
+        neulib::Date *test;
+        test = reports->at(i)->getDate();
+        date = test->dateToString();
+
+
+        reportGrid->SetCellValue(i, 1, reports->at(i)->getPlant());
+        reportGrid->SetCellValue(i, 0, date);
+
+    }
+   
+    layoutGrid();
+
+}
+
+void MainWindow::layoutGrid()
+{
+    reportGrid->SetColLabelValue(0, "Datum");
+    reportGrid->SetColLabelValue(1, "Anlage");
+    reportGrid->SetColLabelValue(2, "Betreff");
+
+    reportGrid->SetColSize(0, 80);
+    reportGrid->SetColSize(1, 130);
+    reportGrid->SetColSize(2, 350);
+}
+
 
 wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
     EVT_MENU(ID_Exit, MainWindow::OnExit)

@@ -23,3 +23,9 @@ const char* Report::getTitle()
 {
 	return reportTitle;
 }
+
+neulib::Date* Report::getDate()
+{
+	return startDate;
+
+}

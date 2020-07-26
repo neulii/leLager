@@ -15,13 +15,25 @@ bool MyApp::OnInit()
     Part lager("lager");
     std::string title = "title";
     std::string text = " das ist ein kleiner meldungsetxt";
-    neulib::Date *date = new neulib::Date(10, 10, 1000);
+    neulib::Date *date = new neulib::Date(23, 14, 2020);
+    neulib::Date *newDate = new neulib::Date(10, 2, 2019);
+
     std::string plant = " ofen";
 
     
     Report* r = new Report("title", date,"mein text", "ofen");
+    Report* rr = new Report("noch", newDate, "meadsfasdfasdfin text", "ofadsfasdfasdfasdfen");
 
     
+    std::vector<Report*>* reports = new std::vector<Report*>();
+
+  
+
+    reports->push_back(r);
+    reports->push_back(rr);
+
+    frame->loadDataToGrid(reports);
+
 
 
 

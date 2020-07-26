@@ -23,6 +23,7 @@ public:
 	const char* getPlant();
 	const char* getTitle();
 	const char* getReportText();
+	neulib::Date* getDate();
 
 };
 

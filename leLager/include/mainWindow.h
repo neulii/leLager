@@ -6,9 +6,10 @@
 #include <wx/wx.h>
 #endif
 
-
+#include "report.h"
 #include "wx/grid.h"
 #include "include/main_lib.h"
+#include "include/date.h"
 
 class MainWindow : public wxFrame
 {
@@ -17,6 +18,9 @@ class MainWindow : public wxFrame
     
 public:
     MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
+    
+    void loadDataToGrid(std::vector<Report*> *reports);
+    void layoutGrid();
 
 private:
     wxPanel* mainPanel;
@@ -28,6 +32,10 @@ private:
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
     void OnClose(wxCloseEvent& event);
+
+
+
+
 
 
 

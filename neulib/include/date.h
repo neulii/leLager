@@ -24,7 +24,7 @@ namespace neulib {
 		int getYear();
 
 		std::string dateToString();
-
+		
 	};
 
 
