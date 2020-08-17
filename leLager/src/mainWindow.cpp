@@ -106,10 +106,11 @@ void MainWindow::loadDataToGrid(std::vector<Report*> *reports)
         test = reports->at(i)->getDate();
         date = test->dateToString();
 
-
-        reportGrid->SetCellValue(i, 1, reports->at(i)->getPlant());
-        reportGrid->SetCellValue(i, 0, date);
-
+        reportGrid->SetCellAlignment(i, 0, wxALIGN_CENTER,wxALIGN_CENTER);
+        reportGrid->SetCellValue(i, 0, date);                           //date
+        reportGrid->SetCellValue(i, 1, reports->at(i)->getPlant());     //plant
+        reportGrid->SetCellValue(i, 2, reports->at(i)->getTitle());     //title
+   
     }
    
     layoutGrid();

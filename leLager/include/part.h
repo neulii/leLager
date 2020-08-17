@@ -24,6 +24,6 @@ class Part {
 		const char* getDescription();
 		const char* getOrderNumber();
 
-		void Part::setManufacturer(const char* manufacturer);
+		void setManufacturer(const char* manufacturer);
 };
 #endif
