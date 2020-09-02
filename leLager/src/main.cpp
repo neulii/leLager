@@ -21,8 +21,8 @@ bool MyApp::OnInit()
     std::string plant = " ofen";
 
     
-    Report* r = new Report("erste störung", date,"mein text", "ofen");
-    Report* rr = new Report("noch eine störung", newDate, "meadsfasdfasdfin text", "ofadsfasdfasdfasdfen");
+    Report* r = new Report("erste strung", date,"mein text", "ofen");
+    Report* rr = new Report("noch eine strung", newDate, "meadsfasdfasdfin text", "ofadsfasdfasdfasdfen");
 
     
     std::vector<Report*>* reports = new std::vector<Report*>();
