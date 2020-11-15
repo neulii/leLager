@@ -13,8 +13,6 @@
 
 class MainWindow : public wxFrame
 {
-
-
     
 public:
     MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size);
@@ -26,27 +24,12 @@ private:
     wxPanel* mainPanel;
     wxBoxSizer* mainSizer;
     wxGrid* reportGrid;
-   
-    
 
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
     void OnClose(wxCloseEvent& event);
-
-
-
-
-
-
-
-
+   void OnQuit(wxCommandEvent& WXUNUSED(event)); 
     wxDECLARE_EVENT_TABLE();
-
-
-
-
-    
-
 
 };
 
@@ -57,6 +40,5 @@ enum id
     ID_Exit = 1,
     ID_Info = 2 
 };
-
 
 #endif // !MAINWINDOW_H

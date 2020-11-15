@@ -2,6 +2,7 @@
 #include "functions.h"
 #include "wx/grid.h"
 #include "wx/panel.h"
+#include "wx/toolbar.h"
 
 
 
@@ -31,6 +32,18 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     menuBar->Append(menuFile, "&Datei");
     menuBar->Append(menuHelp, "&Info");
 
+  wxImage::AddHandler(new wxPNGHandler);
+
+    wxBitmap exit(wxT("exit.png"), wxBITMAP_TYPE_PNG);
+    
+
+    wxToolBar *toolbar = CreateToolBar();
+    toolbar->AddTool(wxID_EXIT, wxT("Exit application"), exit,"Neue Meldung anlgegen",wxITEM_NORMAL);
+   
+    toolbar->Realize(); 
+
+    Connect(wxID_EXIT, wxEVT_COMMAND_TOOL_CLICKED,  wxCommandEventHandler(MainWindow::OnQuit));
+
    // mainPanel = new wxPanel(this, wxID_ANY);
 
 
@@ -56,7 +69,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     this->Layout();
 
     SetMenuBar(menuBar);
-
+    
     CreateStatusBar();
     SetStatusText("No do schaust ;)");
 
@@ -83,7 +96,10 @@ void MainWindow::OnAbout(wxCommandEvent& event)
 
 }
 
-
+void MainWindow::OnQuit(wxCommandEvent& WXUNUSED(event)) {
+    
+   // Close(true);
+}
 void MainWindow::OnClose(wxCloseEvent& event)
 {
     Destroy();
@@ -100,7 +116,7 @@ void MainWindow::loadDataToGrid(std::vector<Report*> *reports)
 
     for (int i = 0; i < reports->size(); i++)
     {
-        //TODO gehört noch geändert
+        //TODO gehï¿½rt noch geï¿½ndert
         std::string date = "";
         neulib::Date *test;
         test = reports->at(i)->getDate();
@@ -121,7 +137,7 @@ void MainWindow::layoutGrid()
 {
     reportGrid->SetColLabelValue(0, "Datum");
     reportGrid->SetColLabelValue(1, "Anlage");
-    reportGrid->SetColLabelValue(2, "Betreff");
+    reportGrid->SetColLabelValue(2, "Meldungstext");
 
     reportGrid->SetColSize(0, 80);
     reportGrid->SetColSize(1, 130);

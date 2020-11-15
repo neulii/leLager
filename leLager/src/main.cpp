@@ -33,29 +33,10 @@ bool MyApp::OnInit()
     reports->push_back(rr);
 
     frame->loadDataToGrid(reports);
-
-
-
-
-
-    
-
-  
-   
-
    
 
     //wxMessageBox(lager.getManufacturer());
-
-
-
-
-
     //wxLogDebug(lager.getManufacturer());
-
-   
-    
-
 
     frame->Show(true);
     return true;
