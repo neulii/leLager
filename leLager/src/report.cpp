@@ -7,6 +7,9 @@ Report::Report(const char *reportTitle, neulib::Date *date, const char* reportTe
 	this->reportText = reportText;
 	this->reportTitle = reportTitle;
 	this->plant = plant;
+	this->reportState = ReportState::Open;
+
+	
 }
 
 const char* Report::getPlant()
@@ -29,3 +32,4 @@ neulib::Date* Report::getDate()
 	return startDate;
 
 }
+

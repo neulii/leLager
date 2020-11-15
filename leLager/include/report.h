@@ -9,10 +9,18 @@ class Report
 
 private:
 
+	enum class ReportState
+	{
+		Open,
+		Closed
+	};
+
 	const char* reportTitle;
 	const char* reportText;
 
 	const char* plant;
+
+	ReportState reportState;
 
 	neulib::Date *startDate;
 
@@ -25,6 +33,8 @@ public:
 	const char* getReportText();
 	neulib::Date* getDate();
 
+
+	
 };
 
 
