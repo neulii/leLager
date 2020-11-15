@@ -4,8 +4,6 @@
 #include "wx/panel.h"
 #include "wx/toolbar.h"
 
-
-
 MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
     : wxFrame(NULL, wxID_ANY, title, pos, size)
 {
@@ -38,7 +36,7 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     
 
     wxToolBar *toolbar = CreateToolBar();
-    toolbar->AddTool(wxID_EXIT, wxT("Exit application"), exit,"Neue Meldung anlgegen",wxITEM_NORMAL);
+    toolbar->AddTool(wxID_EXIT, wxT("Exit application"), exit,"Neue Meldung anlgegen",wxITEM_CHECK);
    
     toolbar->Realize(); 
 
