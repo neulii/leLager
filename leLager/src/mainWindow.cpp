@@ -30,17 +30,23 @@ MainWindow::MainWindow(const wxString& title, const wxPoint& pos, const wxSize& 
     menuBar->Append(menuFile, "&Datei");
     menuBar->Append(menuHelp, "&Info");
 
-  wxImage::AddHandler(new wxPNGHandler);
+    wxImage::AddHandler(new wxPNGHandler);
 
     wxBitmap exit(wxT("exit.png"), wxBITMAP_TYPE_PNG);
-    
 
-    wxToolBar *toolbar = CreateToolBar();
-    toolbar->AddTool(wxID_EXIT, wxT("Exit application"), exit,"Neue Meldung anlgegen",wxITEM_CHECK);
-   
+    toolbar = CreateToolBar();
+    toolbar->AddTool(11111, wxT("Exit application"), exit,"Neue Meldung anlgegen",wxITEM_CHECK);
+  /* 
+    wxButton *b = new wxButton(toolbar,10100,"",wxDefaultPosition,wxSize(24,24),0);
+    b->SetBackgroundColour(wxColor(210,10,10));
+    b->SetForegroundColour(wxColor(0,0,250));
+*/
+ //   toolbar->AddControl(b);
+
+    //toolbar->EnableTool(11111,1);
     toolbar->Realize(); 
 
-    Connect(wxID_EXIT, wxEVT_COMMAND_TOOL_CLICKED,  wxCommandEventHandler(MainWindow::OnQuit));
+    Connect(11111, wxEVT_COMMAND_TOOL_CLICKED,  wxCommandEventHandler(MainWindow::OnQuit));
 
    // mainPanel = new wxPanel(this, wxID_ANY);
 
@@ -95,6 +101,9 @@ void MainWindow::OnAbout(wxCommandEvent& event)
 }
 
 void MainWindow::OnQuit(wxCommandEvent& WXUNUSED(event)) {
+   //wxMessageBox("Das ist eine Info box!", "...nur zur Info...",  wxYES_NO | wxICON_QUESTION);
+    toolbar->ToggleTool(11111,1);
+    toolbar->GetToolState();
     
    // Close(true);
 }

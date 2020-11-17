@@ -24,11 +24,12 @@ private:
     wxPanel* mainPanel;
     wxBoxSizer* mainSizer;
     wxGrid* reportGrid;
-
+    wxToolBar *toolbar;
+   
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
     void OnClose(wxCloseEvent& event);
-   void OnQuit(wxCommandEvent& WXUNUSED(event)); 
+    void OnQuit(wxCommandEvent& WXUNUSED(event)); 
     wxDECLARE_EVENT_TABLE();
 
 };
