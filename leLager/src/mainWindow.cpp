@@ -103,7 +103,7 @@ void MainWindow::OnAbout(wxCommandEvent& event)
 void MainWindow::OnQuit(wxCommandEvent& WXUNUSED(event)) {
    //wxMessageBox("Das ist eine Info box!", "...nur zur Info...",  wxYES_NO | wxICON_QUESTION);
     toolbar->ToggleTool(11111,1);
-    toolbar->GetToolState();
+    //toolbar->GetToolState();
     
    // Close(true);
 }
