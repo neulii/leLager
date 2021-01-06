@@ -2,8 +2,8 @@
 
 
 
- InputReportWindow::InputReportWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
-    :wxFrame(NULL, wxID_ANY, title, pos, size)
+InputReportWindow::InputReportWindow(const wxString& title, const wxPoint& pos, const wxSize& size)
+: wxFrame(NULL, wxID_ANY, title, pos, size)
 {
 
 
