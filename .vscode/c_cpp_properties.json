@@ -24,7 +24,9 @@
             "includePath": [
                 "${workspaceFolder}/src/**",
                 "${workspaceFolder}/dep/mac/mac_lib/lib/wx/include/osx_cocoa-unicode-static-3.1",
-                "${workspaceFolder}/dep/mac/include"                
+                "${workspaceFolder}/dep/mac/include",
+                "${workspaceFolder}/lelager/include",
+                "${workspaceFolder}/lelager/src"                
             ],
             "defines": [
                 "WX_PRECOMP",
